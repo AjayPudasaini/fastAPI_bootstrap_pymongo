@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3>{{ blog.title }}</h3>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <a href="/update/{{ blog.id }}" class="btn btn-primary">Update</a>
+                                    </div>
+                                    <div class="col-3">
+                                        <form method="POST" action="/delete-blog/{{ blog.id }}">
+                                            <button class="btn btn-danger" type="submit">Delete</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>{{ blog.desc }}</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+{% endblock content %}

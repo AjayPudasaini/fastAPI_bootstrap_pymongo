@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-8">
+            {% for blog in blogs %}
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h3><a href="/blog/{{ blog.id }}">{{ blog.title }}</a></h3>
+                        <div>
+                            <p>{{ blog.desc[:200] }}...</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col-4"></div>
+    </div>
+{% endblock content %}
